@@ -1,0 +1,53 @@
+﻿<Window x:Class="HashFileCheck.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HashFileCheck"
+        mc:Ignorable="d"
+        Title="HashCheck" Height="400" Width="420" ResizeMode="NoResize" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="ButtonsOnMain" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="10, 5, 10, 10"/>
+                <Setter Property="Padding" Value="2"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Width" Value="100"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ListView Margin="7" Name="Lv1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" MouseRightButtonUp="Lv1_MouseRightButtonUp">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Name" Width="Auto" DisplayMemberBinding="{Binding Path=Name}">
+                        </GridViewColumn>
+                        <GridViewColumn Header="Hash Value" Width="300" DisplayMemberBinding="{Binding Path=Value}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DockPanel Grid.Row="1">
+            <TextBlock Foreground="Blue" Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" TextDecorations="Underline" Padding="5, 0, 0, 0" DockPanel.Dock="Top" Text="Settings" HorizontalAlignment="Left"/>
+            <GroupBox DockPanel.Dock="Bottom" Header="Hash Comparison:" Margin="7">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Name="Img1" Width="40" VerticalAlignment="Center"/>
+                    <TextBox IsReadOnly="True" Name="Tb1" Grid.Column="1" VerticalAlignment="Center" TextChanged="Tb1_TextChanged"/>
+                    <Button Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource ButtonsOnMain}" Click="Button_Click" Content="Compare File"/>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>
