@@ -16,7 +16,7 @@ namespace RegistrySettings
             {
                 // paths to icon and exe-file
                 string pathToIco = Path.Combine(Environment.CurrentDirectory, "Hash.ico").Replace("\\", "\\\\");
-                string pathToExe = Path.Combine(Environment.CurrentDirectory, "HashCheck.exe %1").Replace("\\", "\\\\").Replace("%1", "\\\"%1\\\"");
+                string pathToExe = Path.Combine(Environment.CurrentDirectory, "HashFileCheck.exe %1").Replace("\\", "\\\\").Replace("%1", "\\\"%1\\\"");
 
                 // read the template of reg-file
                 string regFile = File.ReadAllText(regFileName);
