@@ -24,5 +24,6 @@
 ## Скриншоты
 ![ScreenShot](https://raw.github.com/insendend/HashFileCheck/master/HashFileCheck/Screenshots/scrn1.jpg)
 ![ScreenShot](https://raw.github.com/insendend/HashFileCheck/master/HashFileCheck/Screenshots/scrn2.jpg)
+---
 ![ScreenShot](https://raw.github.com/insendend/HashFileCheck/master/HashFileCheck/Screenshots/scrn3.jpg)
 ![ScreenShot](https://raw.github.com/insendend/HashFileCheck/master/HashFileCheck/Screenshots/scrn4.jpg)
